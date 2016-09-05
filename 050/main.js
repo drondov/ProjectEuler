@@ -8,10 +8,10 @@
 function getPrimes(n) {
 	var primes = [false, false];
 	for(var i = 2; i < n; ++i) primes[i] = i;
-
+	var fin = Math.ceil(Math.pow(n, 0.5));
 	for(var i = 2; i < n; ++i) {
 		if (primes[i] === false) continue;
-		for(var j = i * 2; j < n; j += i) {
+		for(var j = i * 2; j <= fin; j += i) { 
 			primes[j] = false;
 		}
 	}
